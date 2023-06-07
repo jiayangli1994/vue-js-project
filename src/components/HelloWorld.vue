@@ -12,6 +12,22 @@
     <div>ApplicationStatus: {{ user.ApplicationStatus }}</div>
     <button v-on:click="edit()" style="margin-top:20px">Edit details</button>
   </div>
+
+  <div div v-if="show" class="modal-mask">
+    <div>User Name : {{ users[this.indexValue].userName }}</div>
+    <div>DOB : {{ users[this.indexValue].DOB }}</div>
+    <div>Profession : {{users[this.indexValue].Profession }}</div>
+    <div>Salary : {{ users[this.indexValue].salary }}</div>
+    <div>ApplicationStatus: {{ users[this.indexValue].ApplicationStatus }}</div>
+    <select v-model="selected">
+        <option v-for="option in options" :value="option.status">
+        {{ option.status }}
+        </option>
+    </select>
+    <button v-on:click="close()" style="margin-top:20px">Save details</button>
+    <button v-on:click="save()" style="margin-top:20px">Close</button>
+
+  </div>
 </template>
 
 <script>
@@ -25,6 +41,9 @@ export default {
     return {
       search:'',
       show: false,
+      indexValue: 0,
+      selected:'',
+      options: [{status:'Processed'},{status:'Pending'},{status:'Declined'}],
       users: userData };
   },
   computed: {
@@ -41,10 +60,19 @@ export default {
 
   },
   methods : {
-    edit() {
+    edit(index) {
       this.show = true;
-      console.log()
+      this.indexValue = index;
 
+    },
+    close() {
+      this.show = false;
+    }
+    save() {
+      this.show = false;
+      users[this.indexValue].ApplicationStatus = selected;
+      selected = '';
+      this.indexValue= 0;
     }
 
   }
