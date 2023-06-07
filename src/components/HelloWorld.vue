@@ -10,7 +10,7 @@
     <div>Profession : {{ user.Profession }}</div>
     <div>Salary : {{ user.salary }}</div>
     <div>ApplicationStatus: {{ user.ApplicationStatus }}</div>
-    <button v-on:click="edit()" style="margin-top:20px">Edit details</button>
+    <button v-on:click="edit(index)" style="margin-top:20px">Edit details</button>
   </div>
 
   <div div v-if="show" class="modal-mask">
@@ -67,7 +67,7 @@ export default {
     },
     close() {
       this.show = false;
-    }
+    },
     save() {
       this.show = false;
       users[this.indexValue].ApplicationStatus = selected;
