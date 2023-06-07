@@ -10,6 +10,7 @@
     <div>Profession : {{ user.Profession }}</div>
     <div>Salary : {{ user.salary }}</div>
     <div>ApplicationStatus: {{ user.ApplicationStatus }}</div>
+    <button v-on:click="edit()" style="margin-top:20px">Edit details</button>
   </div>
 </template>
 
@@ -23,6 +24,7 @@ export default {
   data() { 
     return {
       search:'',
+      show: false,
       users: userData };
   },
   computed: {
@@ -35,6 +37,14 @@ export default {
           return this.users.filter(user=>user.userName.toLowerCase().includes(this.search.trim().toLowerCase()));
         }
       }
+    }
+
+  },
+  methods : {
+    edit() {
+      this.show = true;
+      console.log()
+
     }
 
   }
