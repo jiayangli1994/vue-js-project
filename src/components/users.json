@@ -1,0 +1,37 @@
+[
+  {
+    "userName": "jack21",
+    "DOB": "07/01/1983",
+    "Profession": "engineer",
+    "salary": "70000",
+    "ApplicationStatus": "Pending"
+  },
+  {
+    "userName": "nick22",
+    "DOB": "06/12/1982",
+    "Profession": "doctor",
+    "salary": "370000",
+    "ApplicationStatus": "Processed"
+  },
+  {
+    "userName": "john24",
+    "DOB": "04/15/1979",
+    "Profession": "engineer",
+    "salary": "70000",
+    "ApplicationStatus": "Declined"
+  },
+  {
+    "userName": "james27",
+    "DOB": "03/10/1980",
+    "Profession": "dentist",
+    "salary": "270000",
+    "ApplicationStatus": "Declined"
+  },
+  {
+    "userName": "login33",
+    "DOB": "02/13/1978",
+    "Profession": "scientist",
+    "salary": "170000",
+    "ApplicationStatus": "Pending"
+  }
+]
