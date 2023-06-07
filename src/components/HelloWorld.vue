@@ -31,8 +31,12 @@ export default {
       users: userData };
   },
   computed: {
-    filteredposts() {
+    filteredDOB() {
+      return this.users.filter(user=>user.DOB.toLowerCase().includes(this.searchDOB));
       
+    },
+    filteredUserName() {
+      return this.users.filter(user=>user.userName.toLowerCase().includes(this.searchUserName));
     }
 
   }
